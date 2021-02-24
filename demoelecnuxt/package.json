@@ -1,0 +1,21 @@
+{
+    "name": "demoelecnuxt",
+    "version": "1.0.0",
+    "private": true,
+    "main": "electron.js",
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "@nuxtjs/axios": "^5.12.5",
+        "core-js": "^3.8.3",
+        "electron": "^11.3.0",
+        "nuxt": "^2.14.12"
+    },
+    "devDependencies": {
+        "@nuxtjs/tailwindcss": "^3.4.2"
+    }
+}
