@@ -13,15 +13,18 @@
         {{ food.price }}
       </p>
       <primary-button action="Add to Cart" topage="/placeorders" class="mt-8"/>
+      <number-for-component :number="food.number"/>
     </div>
   </div>
 </template>
 
 <script>
+import NumberForComponent from '~/components/NumberForComponent'
 import PrimaryButton from '~/components/PrimaryButton'
 export default {
   components:{
-    PrimaryButton
+    PrimaryButton,
+    NumberForComponent
   },
   props: {
     food: {
@@ -42,7 +45,7 @@ export default {
   margin: 20px;
   min-width: 20rem;
   height: 25rem;
-  max-width: 40rem;
+  max-width: 30rem;
   overflow: hidden;
 }
 .card-image{

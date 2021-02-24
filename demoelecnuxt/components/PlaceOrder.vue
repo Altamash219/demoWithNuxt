@@ -1,9 +1,11 @@
 <template>
+<div class="h-screen">
+    <h1 class="text-2xl font-bold text-center capitalize">Customize Your Order</h1>
     <div class="flex">
-        <burger-image :orderImage="order.image"/>
-        <burger-content :ingridient="ingridients" class="mt-24"/>
+        <burger-image :orderImage="order.image" class="mb-20"/>
+        <burger-content :ingridient="ingridients" class="pt-24"/>
     </div>
-
+</div>
 </template>
 
 <script>
@@ -25,22 +27,30 @@ export default {
                 {
                     name:"Cheese",
                     image:'burger.png',
-                    price: '$10'   
+                    price: '$10',
+                    numberadd:'1',
+                    numberremove:'2'   
                 },
                 {
                     name:"Tomato",
                     image:'burger.png',
-                    price: '$10'   
+                    price: '$10',
+                    numberadd:'3',
+                    numberremove:'4'      
                 },
                 {
                     name:"Onion",
                     image:'burger.png',
-                    price: '$10'   
+                    price: '$10',
+                    numberadd:'5',
+                    numberremove:'6'      
                 },
                 {
-                    name:"Mayonaisse",
+                    name:"Patty",
                     image:'burger.png',
-                    price: '$10'   
+                    price: '$10',
+                    numberadd:'7',
+                    numberremove:'8'      
                 }
             ]
           
