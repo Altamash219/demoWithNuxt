@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="w-full"> 
         <h1 class="text-xl font-bold m-4">
             <!-- {{name}} -->
            {{burger.name}}

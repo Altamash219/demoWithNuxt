@@ -1,5 +1,5 @@
 <template>
-    <div class="overflow-hidden border-white border-2 rounded-2xl shadow-xl">
+    <div class="flex overflow-hidden border-white border-2 rounded-2xl shadow-xl">
         <img :src="require(`~/assets/${orderImage}`)" class="rounded-xl">
         <burger-info class="p-5"/>
     </div>

@@ -1,9 +1,10 @@
 <template>
 <div class="h-screen">
     <h1 class="text-2xl font-bold text-center capitalize">Customize Your Order</h1>
-    <div class="flex">
+    <div class="flex-column">
         <burger-image :orderImage="order.image" class="mb-20"/>
-        <burger-content :ingridient="ingridients" class="pt-24"/>
+        <h1>{{this.id}}</h1>
+        <burger-content :ingridient="order.ingridients" class=""/>
     </div>
 </div>
 </template>
@@ -18,11 +19,11 @@ export default {
     },
     data(){
     return{
+        id:this.$route.params.id,
         order:{
             name:"Burger1",
             image:'burger.png',
-            price: '$10' 
-        },
+            price: '$10',
             ingridients:[
                 {
                     name:"Cheese",
@@ -53,6 +54,7 @@ export default {
                     numberremove:'8'      
                 }
             ]
+        }
           
         }
     }

@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-grow h-screen my-auto">
+    <div class="flex-grow h-screen ">
         <ul class="bg-white">
             <li v-for="ingridientt in ingridient" :key="ingridientt.name" class="m-4 border-2 border-white shadow-lg rounded-2xl">
                 <div class="flex">

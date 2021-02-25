@@ -12,7 +12,7 @@
       <p class="text-md text-gray-600">
         {{ food.price }}
       </p>
-      <primary-button action="Add to Cart" topage="/placeorders" class="mt-8"/>
+      <primary-button action="Add to Cart" :topage="`/burger/${food.id}`" class="mt-8"/>
       <number-for-component :number="food.number"/>
     </div>
   </div>
