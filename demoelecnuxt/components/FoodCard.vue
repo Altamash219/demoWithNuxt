@@ -10,9 +10,9 @@
     <div class="card-content">
       <h3 class="font-bold text-2xl text-gray-900 mb-1">{{ food.name }}</h3>
       <p class="text-md text-gray-600">
-        {{ food.price }}
+        ${{ food.price }}
       </p>
-      <primary-button action="Add to Cart" :topage="`/burger/${food.id}`" class="mt-8"/>
+      <primary-button action="Add to Cart" :topage="`/burger/${food.id}`" :id="food.number" class="mt-8"/>
       <number-for-component :number="food.number"/>
     </div>
   </div>
@@ -32,6 +32,18 @@ export default {
       required: true,
     },
   },
+  methods:{
+    GoTo:function (foodId) {
+      console.log("GoTo");
+    }
+  },
+  mounted(){
+      console.log(window.location)
+      // this.$root.$on('send_action',(actionNumber)=>{
+
+      // })
+
+  }
 }
 </script>
 

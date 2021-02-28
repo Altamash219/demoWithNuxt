@@ -6,7 +6,8 @@
 
 <script>
 import Home from '~/components/Home'
-export default {}
+export default {
+}
 </script>
 
 <style>

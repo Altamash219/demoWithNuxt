@@ -1,0 +1,113 @@
+[{
+        "id": 1,
+        "name": "Burger 1",
+        "image": "burger.png",
+        "price": 30,
+        "number": 1,
+        "ingridients": [{
+                "namee": "Cheese",
+                "count": "1",
+                "price": 3
+            },
+            {
+                "namee": "Tomato",
+                "count": "1",
+                "price": 1
+            },
+            {
+                "namee": "Onion",
+                "count": "1",
+                "price": 2
+            },
+            {
+                "namee": "Patty",
+                "count": "1",
+                "price": 5
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Burger 2",
+        "image": "burger2.jpg",
+        "price": 20,
+        "number": 2,
+        "ingridients": [{
+                "namee": "Cheese",
+                "count": "1",
+                "price": 3
+            },
+            {
+                "namee": "Tomato",
+                "count": "1",
+                "price": 1
+            },
+            {
+                "namee": "Onion",
+                "count": "1",
+                "price": 2
+            },
+            {
+                "namee": "Patty",
+                "count": "1",
+                "price": 5
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Burger 3",
+        "image": "burger3.jpg",
+        "price": 25,
+        "number": 3,
+        "ingridients": [{
+                "namee": "Cheese",
+                "count": "1",
+                "price": 3
+            },
+            {
+                "namee": "Tomato",
+                "count": "1",
+                "price": 1
+            },
+            {
+                "namee": "Onion",
+                "count": "1",
+                "price": 2
+            },
+            {
+                "namee": "Patty",
+                "count": "1",
+                "price": 5
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Burger 4",
+        "image": "burger4.jpg",
+        "price": 28,
+        "number": 4,
+        "ingridients": [{
+                "namee": "Cheese",
+                "count": "1",
+                "price": 3
+            },
+            {
+                "namee": "Tomato",
+                "count": "1",
+                "price": 1
+            },
+            {
+                "namee": "Onion",
+                "count": "1",
+                "price": 2
+            },
+            {
+                "namee": "Patty",
+                "count": "1",
+                "price": 5
+            }
+        ]
+    }
+]

@@ -1,7 +1,7 @@
 <template>
     <div class="flex overflow-hidden border-white border-2 rounded-2xl shadow-xl">
-        <img :src="require(`~/assets/${orderImage}`)" class="rounded-xl">
-        <burger-info class="p-5"/>
+        <img :src="require(`~/assets/${order.image}`)" class="rounded-xl max-w-md">
+        <burger-info class="p-5" :burger="order" />
     </div>
 </template>
 <script>
@@ -13,8 +13,8 @@ export default {
         BurgerInfo
     },
    props:{
-       orderImage:{
-           type:String,
+       order:{
+           type:Object,
            required:true
        }
    }

@@ -1,5 +1,5 @@
 <template>
-        <button class="btn"><nuxt-link :to="topage">{{action}}</nuxt-link></button>
+        <button class="btn" @click.prevent="$emit('click')"><nuxt-link :to="topage">{{action}}</nuxt-link></button>
 </template>
 <script>
 export default {
@@ -12,7 +12,7 @@ export default {
             type:String,
             required:true
         }
-    }
+    },
 }
 </script>
 <style>

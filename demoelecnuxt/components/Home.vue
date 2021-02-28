@@ -11,44 +11,53 @@
 
 <script>
 import FoodCard from '~/components/FoodCard';
-// const foods = require('~/components/foods.js');
+// const foods = require('~/components/foods.jss');
+import Foods from '~/static/foods.json'
+function tempAlert(msg,duration){
+    var el = document.createElement("div");
+    el.setAttribute("style","position:absolute;bottom:0px;left:0px;background-color:red;color:white;height:40px;width:100%");
+    el.classList.add("font-bold","text-center")
+    el.innerHTML = msg;
+    setTimeout(function(){
+       el.parentNode.removeChild(el);
+    },duration);
+    document.body.appendChild(el);
+}
 export default {
     components:{
         FoodCard
     },
-    
+    mounted()
+    {
+        var connect = new WebSocket("ws://localhost:8000")
+        var actionMessage;
+        connect.onmessage=function (event) {
+            actionMessage=event.data
+            // console.log(window.location);
+            if (actionMessage!="Please Speak Again") {
+                const el = document.getElementById(`${actionMessage}`)
+            if(el){
+                el.firstChild.click()
+            }else{
+                console.log('Invalid Option')
+                // alert("invalid")
+                tempAlert("Invalid option",2000)
+            }
+            }
+
+            
+            console.log("Message from server:",actionMessage);
+        }
+       connect.onopen=function (event) {
+            console.log(event);
+            console.log("Successfully connected to websocket");
+            // connect.send("From javascript")
+        }
+    },
     data(){
         return{
-            foods : [
-    {
-        id:1,
-        name:"Burger 1",
-        image:'burger.png',
-        price: '$10',
-        number:'1'   
-    },
-    {
-        id:2,
-        name:"Burger 2",
-        image:'burger.png',
-        price: '$20',
-        number:'2'   
-    },
-    {
-        id:3,
-        name:"Burger 3",
-        image:'burger.png',
-        price: '$15',
-        number:'3'   
-    },
-    {
-        id:4,
-        name:"Burger 4",
-        image:'burger.png',
-        price: '$12',
-        number:'4'   
-    }
-]
+            foods:Foods,
+
         }
     },
    

@@ -10,16 +10,20 @@
 export default {
     props:{
         number:{
+            type:Number,
+            default:null
+        },
+        numberText:{
             type:String,
             default:""
         },
         numberadd:{
-            type:String,
-            default:""
+            type:Number,
+            default:null
         },
         numberremove:{
-            type:String,
-            default:""
+            type:Number,
+            default:null
         }
     }
 }
