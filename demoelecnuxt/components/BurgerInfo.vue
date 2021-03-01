@@ -64,17 +64,17 @@ export default {
             required:true
         }
     },
+    // computed:{
+    //      localIngredient(){
+    //         BurgerIngDetails.find((myBurger)=>this.burger.id == myBurger.id).ingridients
+
+    // //     } 
+
+    // },
     mounted(){
-        // var array=this.ingridientInBurger;
-        // console.log(array);
-        // for (let i = 0; i < array.length; i++) {
-        //     const price = array[i].price;
-        //     this.totalPrice+=price            
-        // }
+        // console.log('mounted called')
+        // this.$nuxt.refresh()
         this.$root.$on('add_content',(namee,price,count)=>{
-            // this.burger.price=price
-            // this.ingridients.name=namee;
-            // this.ingridients.price=price
             let array=this.ingridientInBurger
             console.log(array);
             if (array.find(arrayValue=>arrayValue.namee==namee)) {
@@ -110,7 +110,7 @@ export default {
             tempAlert("Ingridient not added",2000) 
             }
         })
-    }
+    },
     
 }
 </script>

@@ -20,10 +20,10 @@ def anaylzeTask(command):
         return "3"
     elif(commandToCheck=="4") or (commandToCheck=="four"):
         return "4"
-    elif(keyword=="add"):
+    elif(keyword=="add") or (keyword == "ad") or (keyword == "at"):
         if(commandToCheck=="cheese") or (commandToCheck=="chains") or (commandToCheck=="chain"):
             return "11"
-        elif(commandToCheck=="patti") or (commandToCheck=="patty") or (commandToCheck=="fati"):
+        elif(commandToCheck=="patti") or (commandToCheck=="peti") or (commandToCheck=="patty") or (commandToCheck=="fati"):
             return "17"
         elif(commandToCheck=="tomato"):
             return "13"
@@ -34,7 +34,7 @@ def anaylzeTask(command):
     elif(keyword=="remove"):
         if(commandToCheck=="cheese") or (commandToCheck=="chains") or (commandToCheck=="chain"):
             return "12"
-        elif(commandToCheck=="patti") or (commandToCheck=="patty") or (commandToCheck=="fati"):
+        elif(commandToCheck=="patti") or (commandToCheck=="peti") or (commandToCheck=="patty") or (commandToCheck=="fati"):
             return "18"
         elif(commandToCheck=="tomato"):
             return "14"

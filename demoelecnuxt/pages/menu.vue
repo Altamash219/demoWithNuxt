@@ -1,14 +1,12 @@
 <template>
   <div class="container">
-    <logo/>
+    <home/>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo'
+import Home from '~/components/Home'
 export default {
-  components:{Logo}
-  
 }
 </script>
 

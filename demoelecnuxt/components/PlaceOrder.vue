@@ -20,42 +20,7 @@ export default {
     data(){
     return{
         order:Data.find(burger=>this.$route.params.id==burger.id),
-        // order: Data,
-        // order:{
-        //     name:"Burger1",
-        //     image:'burger.png',
-        //     price: '$10',
-        //     ingridients:[
-        //         {
-        //             name:"Cheese",
-        //             image:'burger.png',
-        //             price: '$10',
-        //             numberadd:'1',
-        //             numberremove:'2'   
-        //         },
-        //         {
-        //             name:"Tomato",
-        //             image:'burger.png',
-        //             price: '$10',
-        //             numberadd:'3',
-        //             numberremove:'4'      
-        //         },
-        //         {
-        //             name:"Onion",
-        //             image:'burger.png',
-        //             price: '$10',
-        //             numberadd:'5',
-        //             numberremove:'6'      
-        //         },
-        //         {
-        //             name:"Patty",
-        //             image:'burger.png',
-        //             price: '$10',
-        //             numberadd:'7',
-        //             numberremove:'8'      
-        //         }
-        //     ]
-        // }
+        
           
         }
     }
