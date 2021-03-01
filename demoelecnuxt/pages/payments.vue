@@ -1,5 +1,6 @@
 <template>
     <div>
+        <logo class="float-left h-16 w-16"/>
         <h1 class="text-center font-serif text-bold text-2xl">Scan QR code And Pay</h1>
         <img :src="require(`~/assets/${QrImage}`)" class="rounded-xl qr m-auto">
         <primary-button action="Back" class="btnn w-56 ml-4" topage="/menu" id="21"></primary-button>
@@ -7,7 +8,11 @@
     </div>
 </template>
 <script>
+import Logo from "~/components/Logo";
 export default {
+    components:{
+        Logo,
+    },
     data(){
         return{
             QrImage:'qr.png'
@@ -16,31 +21,13 @@ export default {
     mounted(){
         var connect = new WebSocket("ws://localhost:8000")
          setTimeout(() => {
-        this.QrImage = 'success.jpeg'
-        connect.onopen=function (event) {
+            this.QrImage = 'success.jpeg'
+            connect.onopen=function (event) {
             console.log(event);
             console.log("Successfully connected to websocket");
             // connect.send("From javascript")
-        }
-    }, 5000);
-        // connect.onmessage=function (event) {
-        //     actionMessage=event.data
-        //     // console.log(window.location);
-        //     if (actionMessage!="Please Speak Again") {
-        //         const el = document.getElementById(`${actionMessage}`)
-        //     if(el){
-        //         el.firstChild.click()
-        //     }else{
-        //         console.log('Invalid Option')
-        //         // alert("invalid")
-        //         tempAlert("Invalid option",2000)
-        //     }
-        //     }
-
-            
-        //     console.log("Message from server:",actionMessage);
-        // }
-       
+            }
+        }, 5000);
     }
 }
 </script>
