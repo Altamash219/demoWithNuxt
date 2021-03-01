@@ -23,13 +23,13 @@ def anaylzeTask(command):
     # commandList[1] = command.split(' ')[1]
     #action = command
     # commandList[0] = command.split(' ')[0]
-    if(commandList[1] == "1") or (commandList[1] == "one") or (commandList[1] == "bun"):
+    if(commandList[0] == "aloo") or (commandList[0] == "aaloo") or (commandList[1] == "one") or (commandList[1] == "1"):
         return "1"
-    elif(commandList[1] == "2") or (commandList[1] == "to") or (commandList[1] == "two"):
+    elif(commandList[0] == "maharaja") or (commandList[1] == "to") or (commandList[1] == "two") or (commandList[1] == "2"):
         return "2"
-    elif(commandList[1] == "3") or (commandList[1] == "tree") or (commandList[1] == "three"):
+    elif(commandList[0] == "cheese") or (commandList[1] == "tree") or (commandList[1] == "three") or (commandList[1] == "3"):
         return "3"
-    elif(commandList[1] == "4") or (commandList[1] == "four"):
+    elif(commandList[0] == "double" ) or (commandList[1] == "4") or (commandList[1] == "four") or (commandList[1] == "for"):
         return "4"
     elif(commandList[0]
          == "add") or (commandList[0]

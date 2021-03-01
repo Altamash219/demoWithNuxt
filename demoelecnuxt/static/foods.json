@@ -1,6 +1,6 @@
 [{
         "id": 1,
-        "name": "Burger 1",
+        "name": "Aloo Tikki",
         "image": "burger.png",
         "price": 30,
         "number": 1,
@@ -8,7 +8,7 @@
     },
     {
         "id": 2,
-        "name": "Burger 2",
+        "name": "Maharaja Mac",
         "image": "burger2.jpg",
         "price": 20,
         "number": 2,
@@ -16,7 +16,7 @@
     },
     {
         "id": 3,
-        "name": "Burger 3",
+        "name": "Cheese Burger",
         "image": "burger3.jpg",
         "price": 25,
         "number": 3,
@@ -24,7 +24,7 @@
     },
     {
         "id": 4,
-        "name": "Burger 4",
+        "name": "Double Cheese Burger",
         "image": "burger4.jpg",
         "price": 28,
         "number": 4,

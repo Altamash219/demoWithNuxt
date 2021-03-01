@@ -1,5 +1,6 @@
 <template>
     <div>
+        <logo class="float-left h-16 w-16"/>
         <h1 class="text-center font-serif text-bold text-2xl">Scan QR code And Pay</h1>
         <img :src="require(`~/assets/${QrImage}`)" class="rounded-xl qr m-auto">
         <primary-button action="Back" class="btnn w-56 ml-4" topage="/menu" id="21"></primary-button>
@@ -7,7 +8,11 @@
     </div>
 </template>
 <script>
+import Logo from "~/components/Logo";
 export default {
+    components:{
+        Logo,
+    },
     data(){
         return{
             QrImage:'qr.png'

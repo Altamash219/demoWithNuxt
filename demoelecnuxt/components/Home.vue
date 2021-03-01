@@ -1,6 +1,10 @@
 <template>
 <div>
-    <h1 class="text-3xl m-auto font-bold font-serif">Select Your Burger</h1>
+    <div>
+        <logo class="float-left h-16 w-16"/>
+        <h1 class="text-3xl font-bold text-center uppercase m-24">Select Your Burger</h1>
+
+    </div>
     <div class="container">
         <div v-for="food in foods" :key="food.name">
             <FoodCard :food="food"/>
@@ -11,8 +15,8 @@
 
 <script>
 import FoodCard from '~/components/FoodCard';
-// const foods = require('~/components/foods.jss');
 import Foods from '~/static/foods.json'
+import Logo from './Logo.vue';
 function tempAlert(msg,duration){
     var el = document.createElement("div");
     el.setAttribute("style","position:absolute;bottom:0px;left:0px;background-color:red;color:white;height:40px;width:100%");
@@ -25,7 +29,8 @@ function tempAlert(msg,duration){
 }
 export default {
     components:{
-        FoodCard
+        FoodCard,
+        Logo
     },
     mounted()
     {
