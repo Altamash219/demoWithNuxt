@@ -1,7 +1,8 @@
 import speech_recognition as sr
 import asyncio
 import websockets
-
+import pyttsx3
+from gTTS import gTTS
 # Configuring websocket connection and sending message over the websocket to the server
 
 
@@ -9,6 +10,8 @@ async def hello(text):
     uri = "ws://localhost:8000"
     async with websockets.connect(uri) as websocket:
         await websocket.send(text)
+        message = await websocket.recv()
+        return message
 # Analyzing user input to send command to the server accordingly
 
 
@@ -17,7 +20,7 @@ def anaylzeTask(command):
     print(command)
     commandList = command.split(' ')
 
-    # commandToCheck = command.split(' ')[1]
+    # commandList[1] = command.split(' ')[1]
     #action = command
     # commandList[0] = command.split(' ')[0]
     if(commandList[1] == "1") or (commandList[1] == "one") or (commandList[1] == "bun"):
@@ -28,10 +31,20 @@ def anaylzeTask(command):
         return "3"
     elif(commandList[1] == "4") or (commandList[1] == "four"):
         return "4"
-    elif(keyword=="add") or (keyword == "ad") or (keyword == "at"):
-        if(commandToCheck=="cheese") or (commandToCheck=="chains") or (commandToCheck=="chain"):
+    elif(commandList[0]
+         == "add") or (commandList[0]
+                       == "ad") or (commandList[0]
+                                    == "at"):
+        if(commandList[1]
+           == "cheese") or (commandList[1]
+                            == "chains") or (commandList[1]
+                                             == "chain"):
             return "11"
-        elif(commandToCheck=="patti") or (commandToCheck=="peti") or (commandToCheck=="patty") or (commandToCheck=="fati"):
+        elif(commandList[1]
+             == "patti") or (commandList[1]
+                             == "peti") or (commandList[1]
+                                            == "patty") or (commandList[1]
+                                                            == "fati"):
             return "17"
         elif(commandList[1] == "tomato"):
             return "13"
@@ -42,7 +55,11 @@ def anaylzeTask(command):
     elif(commandList[0] == "remove"):
         if(commandList[1] == "cheese") or (commandList[1] == "chains") or (commandList[1] == "chain"):
             return "12"
-        elif(commandToCheck=="patti") or (commandToCheck=="peti") or (commandToCheck=="patty") or (commandToCheck=="fati"):
+        elif(commandList[1]
+             == "patti") or (commandList[1]
+                             == "peti") or (commandList[1]
+                                            == "patty") or (commandList[1]
+                                                            == "fati"):
             return "18"
         elif(commandList[1] == "tomato"):
             return "14"
@@ -58,6 +75,12 @@ def anaylzeTask(command):
         return "21"
     else:
         return "Third"
+
+
+def speak(audio):
+    engine = pyttsx3.init()
+    engine.say(audio)
+    engine.runAndWait()
 
 # Recording user audio and converting it to text
 
@@ -92,6 +115,7 @@ def listen():
     #   print("[wake-up word found]")
     #   return command
 if __name__ == "__main__":
-    while(True):
-        text = listen()
-        asyncio.get_event_loop().run_until_complete(hello(text))
+    # while(True):
+    #     text = listen()
+    #     audio = asyncio.get_event_loop().run_until_complete(hello(text))
+    speak("payment successful")

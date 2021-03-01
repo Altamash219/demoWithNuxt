@@ -29,12 +29,13 @@ export default {
     },
     mounted()
     {
-        var connect = new WebSocket("ws://localhost:8000")
-        var actionMessage;
+        // var connect = new WebSocket("ws://localhost:8000")
+        this.$root.$on("websocket",(connect)=>{
+            var actionMessage;
         connect.onmessage=function (event) {
             actionMessage=event.data
             // console.log(window.location);
-            if (actionMessage!="Please Speak Again") {
+            if (actionMessage!="Please Speak Again" && actionMessage!="Payment Successful") {
                 const el = document.getElementById(`${actionMessage}`)
             if(el){
                 el.firstChild.click()
@@ -51,8 +52,9 @@ export default {
        connect.onopen=function (event) {
             console.log(event);
             console.log("Successfully connected to websocket");
-            // connect.send("From javascript")
+            connect.send("From javascript")
         }
+        })
     },
     data(){
         return{

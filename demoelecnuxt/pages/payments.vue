@@ -14,14 +14,19 @@ export default {
         }
     },
     mounted(){
-        var connect = new WebSocket("ws://localhost:8000")
-         setTimeout(() => {
+        
+    setTimeout(() => {
+        // var connect = new WebSocket("ws://localhost:8000")
         this.QrImage = 'success.jpeg'
-        connect.onopen=function (event) {
-            console.log(event);
-            console.log("Successfully connected to websocket");
-            // connect.send("From javascript")
+        this.$root.$on("websocket",(connect)=>{
+            connect.onopen=function (event) {
+            // console.log(event);
+            // console.log("Websocket connected");
+            // console.log("Successfully connected to websocket");
+            connect.send("Payment Successful")
         }
+        })
+        
     }, 5000);
         // connect.onmessage=function (event) {
         //     actionMessage=event.data
