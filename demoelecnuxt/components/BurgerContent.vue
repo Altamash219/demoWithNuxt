@@ -11,9 +11,9 @@
                 </div>
             </li>
         </ul>
-        <primary-button action="Confirm Order And Pay" class="btnn w-56 float-right" topage="/payments" id="twenty"></primary-button>
+        <primary-button action="Confirm Order And Pay" class="btnn w-56 float-right" topage="/payments" id="20"></primary-button>
         <number-for-component number=20 numberText="twenty" class="float-right mt-5" />
-        <primary-button action="Back" class="btnn w-56 float-left ml-4" topage="/" id="twentyone"></primary-button>
+        <primary-button action="Back" class="btnn w-56 float-left ml-4" topage="/" id="21"></primary-button>
         <number-for-component number=21 numberText="twentyone" class="float-left mt-5"/>
     </div>
 </template>
