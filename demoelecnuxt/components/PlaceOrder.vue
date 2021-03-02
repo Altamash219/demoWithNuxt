@@ -6,7 +6,7 @@
     </div>
     <div class="flex-column">
         <burger-image :order="order" class="mb-20" style="height:450px"/>
-        <burger-content :ingridient="order.ingridients" class="pt-20"/>
+        <burger-content :ingridient="order.ingridients" :burgerId="order.id" class="pt-20"/>
     </div>
 </div>
 </template>

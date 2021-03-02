@@ -32,6 +32,12 @@ export default {
         FoodCard,
         Logo
     },
+    data(){
+        return{
+            foods:Foods,
+
+        }
+    },
     mounted()
     {
     // var connect = new WebSocket("ws://localhost:8000")
@@ -83,12 +89,6 @@ export default {
     //         console.log("Successfully connected to websocket");
     //         //connect.send("From javascript")
     //     }
-    },
-    data(){
-        return{
-            foods:Foods,
-
-        }
     },
    
     

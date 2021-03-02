@@ -55,7 +55,8 @@ export default {
     data(){
         return{
             ingridientInBurger:BurgerIngDetails.find((myBurger)=>this.burger.id == myBurger.id).ingridients,
-            totalPrice:this.burger.price
+            totalPrice:this.burger.price,
+            burgerId : this.burger.id
         }
     },
     props:{
@@ -74,43 +75,49 @@ export default {
     mounted(){
         // console.log('mounted called')
         // this.$nuxt.refresh()
-        this.$root.$on('add_content',(namee,price,count)=>{
-            let array=this.ingridientInBurger
-            console.log(array);
-            if (array.find(arrayValue=>arrayValue.namee==namee)) {
-                let index=array.findIndex(arrayValue=>arrayValue.namee==namee);
-                // console.log(array[index].count);
-                console.log("This is index",array[index]);
-                array[index].price+=price
-                array[index].count+=1
-                this.totalPrice+=price
-                //   console.log(window.location)
-            } else {
-                array.push({namee,price,count})
-                this.totalPrice+=price
+        this.$root.$on('add_content',(namee,price,count, id)=>{
+            if(id == this.burger.id){
+                let array=this.ingridientInBurger
+                console.log(array);
+                if (array.find(arrayValue=>arrayValue.namee==namee)) {
+                    let index=array.findIndex(arrayValue=>arrayValue.namee==namee);
+                    // console.log(array[index].count);
+                    console.log("This is index",array[index]);
+                    array[index].price+=price
+                    array[index].count+=1
+                    this.totalPrice+=price
+                    //   console.log(window.location)
+                } else {
+                    array.push({namee,price,count})
+                    this.totalPrice+=price
+                }
             }
         })
-        this.$root.$on('remove_content',(namee,price,count)=>{
-            let array=this.ingridientInBurger
-            console.log(namee);
-            if (this.ingridientInBurger.find(arrayValue=>arrayValue.namee==namee)) {
-                let index=this.ingridientInBurger.findIndex(arrayValue=>arrayValue.namee==namee);
-                if (array[index].count>1) {
-                    array[index].count--
-                    array[index].price-=price
-                    this.totalPrice-=price
+        this.$root.$on('remove_content',(namee,price,count, id)=>{
+            if(id == this.burger.id){
+                let array=this.ingridientInBurger
+                console.log(namee);
+                if (this.ingridientInBurger.find(arrayValue=>arrayValue.namee==namee)) {
+                    let index=this.ingridientInBurger.findIndex(arrayValue=>arrayValue.namee==namee);
+                    if (array[index].count>1) {
+                        array[index].count--
+                        array[index].price-=price
+                        this.totalPrice-=price
+                    }
+                    else{
+                        array.splice(index,1)
+                        // this.totalPrice-=price
+                    }
+    
+                } else {
+                //    alert("Ingridient not added")
+                tempAlert("Ingridient not added",2000) 
                 }
-                else{
-                    array.splice(index,1)
-                    // this.totalPrice-=price
-                }
-
-            } else {
-            //    alert("Ingridient not added")
-            tempAlert("Ingridient not added",2000) 
+                
             }
         })
     },
+ 
     
 }
 </script>

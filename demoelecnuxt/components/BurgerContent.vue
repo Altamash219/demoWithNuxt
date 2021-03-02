@@ -4,9 +4,9 @@
             <li v-for="ingridientt in ingridient" :key="ingridientt.name" class="m-4 mb-20 border-2 border-white shadow-lg rounded-2xl">
                 <div class="flex">
                     <number-for-component :numberadd="ingridientt.numberadd"/>
-                    <primary-button action="+" @click="addIngridient(ingridientt.name,ingridientt.price,1)" :id="ingridientt.numberadd" class="w-16 text-xl text-center m-4"/>
+                    <primary-button action="+" @click="addIngridient(ingridientt.name,ingridientt.price,1, burgerId)" :id="ingridientt.numberadd" class="w-16 text-xl text-center m-4"/>
                     <h4 class="m-4 m-auto font-bold text-lg uppercase">{{ingridientt.name}}</h4>
-                    <primary-button action="-" @click="removeIngridient(ingridientt.name,ingridientt.price,1)" :id="ingridientt.numberremove" class="w-16 text-xl text-center m-4"/>
+                    <primary-button action="-" @click="removeIngridient(ingridientt.name,ingridientt.price,1, burgerId)" :id="ingridientt.numberremove" class="w-16 text-xl text-center m-4"/>
                     <number-for-component :numberremove="ingridientt.numberremove"/>
                 </div>
             </li>
@@ -26,6 +26,10 @@ export default {
         ingridient:{
             type:Array,
             required:true
+        },
+        burgerId:{
+            type: Number,
+            required : true
         }
     },
     components:{
@@ -33,11 +37,11 @@ export default {
         NumberForComponent
     },
     methods:{
-        addIngridient:function(namee,price,count){
-            this.$root.$emit("add_content",namee,price,count)
+        addIngridient:function(namee,price,count, burgerId){
+            this.$root.$emit("add_content",namee,price,count, burgerId)
         },
-        removeIngridient:function(namee,price,count) {
-            this.$root.$emit("remove_content",namee,price,count)
+        removeIngridient:function(namee,price,count, burgerId) {
+            this.$root.$emit("remove_content",namee,price,count, burgerId)
         }
         // addIngridient(name){
         //     console.log(name);
