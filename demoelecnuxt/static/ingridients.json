@@ -6,22 +6,22 @@
         "number": 1,
         "ingridients": [{
                 "namee": "Cheese",
-                "count": "1",
+                "count": 1,
                 "price": 3
             },
             {
                 "namee": "Tomato",
-                "count": "1",
+                "count": 1,
                 "price": 1
             },
             {
                 "namee": "Onion",
-                "count": "1",
+                "count": 1,
                 "price": 2
             },
             {
                 "namee": "Patty",
-                "count": "1",
+                "count": 1,
                 "price": 5
             }
         ]
@@ -34,22 +34,22 @@
         "number": 2,
         "ingridients": [{
                 "namee": "Cheese",
-                "count": "1",
+                "count": 1,
                 "price": 3
             },
             {
                 "namee": "Tomato",
-                "count": "1",
+                "count": 1,
                 "price": 1
             },
             {
                 "namee": "Onion",
-                "count": "1",
+                "count": 1,
                 "price": 2
             },
             {
                 "namee": "Patty",
-                "count": "1",
+                "count": 1,
                 "price": 5
             }
         ]
@@ -62,22 +62,22 @@
         "number": 3,
         "ingridients": [{
                 "namee": "Cheese",
-                "count": "1",
+                "count": 1,
                 "price": 3
             },
             {
                 "namee": "Tomato",
-                "count": "1",
+                "count": 1,
                 "price": 1
             },
             {
                 "namee": "Onion",
-                "count": "1",
+                "count": 1,
                 "price": 2
             },
             {
                 "namee": "Patty",
-                "count": "1",
+                "count": 1,
                 "price": 5
             }
         ]
@@ -90,22 +90,22 @@
         "number": 4,
         "ingridients": [{
                 "namee": "Cheese",
-                "count": "1",
+                "count": 1,
                 "price": 3
             },
             {
                 "namee": "Tomato",
-                "count": "1",
+                "count": 1,
                 "price": 1
             },
             {
                 "namee": "Onion",
-                "count": "1",
+                "count": 1,
                 "price": 2
             },
             {
                 "namee": "Patty",
-                "count": "1",
+                "count": 1,
                 "price": 5
             }
         ]

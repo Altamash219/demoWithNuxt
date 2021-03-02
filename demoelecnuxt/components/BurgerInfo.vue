@@ -80,9 +80,9 @@ export default {
             if (array.find(arrayValue=>arrayValue.namee==namee)) {
                 let index=array.findIndex(arrayValue=>arrayValue.namee==namee);
                 // console.log(array[index].count);
-                console.log(array[index]);
+                console.log("This is index",array[index]);
                 array[index].price+=price
-                array[index].count++
+                array[index].count+=1
                 this.totalPrice+=price
                 //   console.log(window.location)
             } else {
