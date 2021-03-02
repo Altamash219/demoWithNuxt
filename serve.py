@@ -18,6 +18,7 @@ async def test(websocket, path):
     try:
         async for message in websocket:
             print(message)
+            print("Connect set", connected)
             for ws in connected:
                 if ws != websocket:
                     await ws.send(message)

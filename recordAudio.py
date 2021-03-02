@@ -1,8 +1,9 @@
 import speech_recognition as sr
 import asyncio
+import time
 import websockets
 import pyttsx3
-from gTTS import gTTS
+# import gTTS
 # Configuring websocket connection and sending message over the websocket to the server
 
 
@@ -10,8 +11,8 @@ async def hello(text):
     uri = "ws://localhost:8000"
     async with websockets.connect(uri) as websocket:
         await websocket.send(text)
-        message = await websocket.recv()
-        return message
+        # message = await websocket.recv()
+        # return message
 # Analyzing user input to send command to the server accordingly
 
 
@@ -23,13 +24,13 @@ def anaylzeTask(command):
     # commandList[1] = command.split(' ')[1]
     #action = command
     # commandList[0] = command.split(' ')[0]
-    if(commandList[0] == "aloo") or (commandList[0] == "aaloo") or (commandList[1] == "one") or (commandList[1] == "1"):
+    if(commandList[0] == "aloo") or (commandList[0] == "aaloo") or (commandList[0] == "one") or (commandList[0] == "1"):
         return "1"
-    elif(commandList[0] == "maharaja") or (commandList[1] == "to") or (commandList[1] == "two") or (commandList[1] == "2"):
+    elif(commandList[0] == "maharaja") or (commandList[0] == "to") or (commandList[0] == "two") or (commandList[0] == "2"):
         return "2"
-    elif(commandList[0] == "cheese") or (commandList[1] == "tree") or (commandList[1] == "three") or (commandList[1] == "3"):
+    elif(commandList[0] == "cheese") or (commandList[0] == "cheeseburger") or (commandList[1] == "three") or (commandList[0] == "3"):
         return "3"
-    elif(commandList[0] == "double" ) or (commandList[1] == "4") or (commandList[1] == "four") or (commandList[1] == "for"):
+    elif(commandList[0] == "double") or (commandList[0] == "4") or (commandList[0] == "four") or (commandList[0] == "for"):
         return "4"
     elif(commandList[0]
          == "add") or (commandList[0]
@@ -51,7 +52,7 @@ def anaylzeTask(command):
         elif(commandList[1] == "onion"):
             return "15"
         else:
-            return "First"
+            return "Can You Repeat"
     elif(commandList[0] == "remove"):
         if(commandList[1] == "cheese") or (commandList[1] == "chains") or (commandList[1] == "chain"):
             return "12"
@@ -66,7 +67,7 @@ def anaylzeTask(command):
         elif(commandList[1] == "onion"):
             return "16"
         else:
-            return "Second"
+            return "Can you repeat"
     elif(commandList[0] == "confirm"):
         print("Said continue")
         return "20"
@@ -74,10 +75,11 @@ def anaylzeTask(command):
         print("Said back")
         return "21"
     else:
-        return "Third"
+        return "Please Speak Again"
 
 
 def speak(audio):
+    time.sleep(5)
     engine = pyttsx3.init()
     engine.say(audio)
     engine.runAndWait()
@@ -100,6 +102,7 @@ def listen():
             if(command == "place an order"):
                 return "99"
             elif(command == "confirm"):
+                #speak("Payment Successful")
                 return "20"
             elif(command == "back"):
                 return "21"
@@ -107,15 +110,14 @@ def listen():
                 commandAnalyzed = anaylzeTask(command)
                 return commandAnalyzed
         except:
-            return "Forth"
-
+            return "Please Speak Again"
 
     # if (command.split(' ')[0] == "casper") or (command.split(' ')[0]=="kasper"):
         # 			# if wake up word found....
     #   print("[wake-up word found]")
     #   return command
 if __name__ == "__main__":
-    # while(True):
-    #     text = listen()
-    #     audio = asyncio.get_event_loop().run_until_complete(hello(text))
-    speak("payment successful")
+    while(True):
+        text = listen()
+        audio = asyncio.get_event_loop().run_until_complete(hello(text))
+    # speak("payment successful")

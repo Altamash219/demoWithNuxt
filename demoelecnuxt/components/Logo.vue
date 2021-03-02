@@ -18,35 +18,60 @@ function tempAlert(msg,duration){
     document.body.appendChild(el);
 }
 export default {
-    mounted(){
-       var connect = new WebSocket("ws://localhost:8000")
-        var actionMessage;
-        (connect)=>{
-            this.$root.$emit("websocket",connect)
-        }
-        connect.onmessage=function (event) {
-            actionMessage=event.data
-            // console.log(window.location);
-            if (actionMessage!="Please Speak Again") {
-                const el = document.getElementById(`${actionMessage}`)
-            if(el){
-                el.firstChild.click()
-            }else{
-                console.log('Invalid Option')
-                // alert("invalid")
-                tempAlert("Invalid option",2000)
-            }
-            }
+//     mounted(){
+//         var connect = new WebSocket("ws://localhost:8000")
+//     //    var connect = new WebSocket("ws://localhost:8000")
+//     //     var actionMessage;
+//     //     // (connect)=>{
+//     //     //     this.$root.$emit("websocket",connect)
+//     //     // }
+//     //     connect.onmessage=function (event) {
+//     //         actionMessage=event.data
+//     //         // console.log(window.location);
+//     //         if (actionMessage!="Please Speak Again") {
+//     //             const el = document.getElementById(`${actionMessage}`)
+//     //         if(el){
+//     //             el.firstChild.click()
+//     //         }else{
+//     //             console.log('Invalid Option')
+//     //             // alert("invalid")
+//     //             tempAlert("Invalid option",2000)
+//     //         }
+//     //         }
 
             
-            console.log("Message from server:",actionMessage);
-        }
-       connect.onopen=function (event) {
-            console.log(event);
-            console.log("Successfully connected to websocket");
-            // connect.send("From javascript")
-        } 
-    }
+//     //         console.log("Message from server:",actionMessage);
+//     //     }
+//     //    connect.onopen=function (event) {
+//     //         console.log(event);
+//     //         console.log("Successfully connected to websocket");
+//     //         // connect.send("From javascript")
+//     //     } 
+//     // }
+//     var actionMessage;
+//         connect.onmessage=function (event) {
+//             actionMessage=event.data
+//             // console.log(window.location);
+//             if (actionMessage!="Please Speak Again" && actionMessage!="Payment Successful") {
+//                 const el = document.getElementById(`${actionMessage}`)
+//             if(el){
+//                 el.firstChild.click()
+//             }else{
+//                 console.log('Invalid Option')
+//                 // alert("invalid")
+//                 tempAlert("Invalid option",2000)
+//             }
+//             }
+
+            
+//             console.log("Message from server:",actionMessage);
+//         }
+//        connect.onopen=function (event) {
+//             console.log(event);
+//             console.log("Successfully connected to websocket");
+//             //connect.send("From javascript")
+//         }
    
+// }
 }
 </script>

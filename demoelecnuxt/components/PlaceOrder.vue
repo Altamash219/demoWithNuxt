@@ -14,13 +14,12 @@
 <script>
 import BurgerImage from "~/components/BurgerImage";
 import BurgerContent from "~/components/BurgerContent";
-import Logo from "~/components/Logo"
+import Logo from '~/components/Logo';
 import Data from "~/static/foodDetails.json";
 export default {
     components:{
         BurgerImage,
-        BurgerContent,
-        Logo,
+        BurgerContent
     },
     data(){
     return{
