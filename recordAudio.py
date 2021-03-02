@@ -11,8 +11,6 @@ async def hello(text):
     uri = "ws://localhost:8000"
     async with websockets.connect(uri) as websocket:
         await websocket.send(text)
-        # message = await websocket.recv()
-        # return message
 # Analyzing user input to send command to the server accordingly
 
 
@@ -20,10 +18,6 @@ def anaylzeTask(command):
     # print(command.split(' ')[1])
     print(command)
     commandList = command.split(' ')
-
-    # commandList[1] = command.split(' ')[1]
-    #action = command
-    # commandList[0] = command.split(' ')[0]
     if(commandList[0] == "aloo") or (commandList[0] == "aaloo") or (commandList[0] == "one") or (commandList[0] == "1"):
         return "1"
     elif(commandList[0] == "maharaja") or (commandList[0] == "to") or (commandList[0] == "two") or (commandList[0] == "2"):
@@ -112,10 +106,7 @@ def listen():
         except:
             return "Please Speak Again"
 
-    # if (command.split(' ')[0] == "casper") or (command.split(' ')[0]=="kasper"):
-        # 			# if wake up word found....
-    #   print("[wake-up word found]")
-    #   return command
+
 if __name__ == "__main__":
     while(True):
         text = listen()
